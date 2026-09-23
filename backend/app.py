@@ -1,7 +1,14 @@
+
 import os
+
 from datetime import datetime
 
-from flask import Flask, jsonify, request, send_from_directory
+from flask import (
+    Flask,
+    jsonify,
+    request,
+    send_from_directory
+)
 
 from models import (
     db,
@@ -14,12 +21,42 @@ from models import (
 )
 
 
-BACKEND_FOLDER = os.path.dirname(os.path.abspath(__file__))
-PROJECT_ROOT = os.path.dirname(BACKEND_FOLDER)
-FRONTEND_FOLDER = os.path.join(PROJECT_ROOT, "frontend")
+# ---------------------------------------------------------
+# PATHS
+# ---------------------------------------------------------
 
-DATABASE_PATH = os.path.join(BACKEND_FOLDER, "rover.db")
+BACKEND_FOLDER = os.path.dirname(
+    os.path.abspath(__file__)
+)
 
+PROJECT_ROOT = os.path.dirname(
+    BACKEND_FOLDER
+)
+
+FRONTEND_FOLDER = os.path.join(
+    PROJECT_ROOT,
+    "frontend"
+)
+
+FRONTEND_JS_FOLDER = os.path.join(
+    FRONTEND_FOLDER,
+    "js"
+)
+
+FRONTEND_CSS_FOLDER = os.path.join(
+    FRONTEND_FOLDER,
+    "css"
+)
+
+DATABASE_PATH = os.path.join(
+    BACKEND_FOLDER,
+    "rover.db"
+)
+
+
+# ---------------------------------------------------------
+# FLASK APP
+# ---------------------------------------------------------
 
 app = Flask(
     __name__,
@@ -28,20 +65,50 @@ app = Flask(
 )
 
 
+# ---------------------------------------------------------
+# DATABASE CONFIGURATION
+# ---------------------------------------------------------
+
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     f"sqlite:///{DATABASE_PATH.replace(os.sep, '/')}"
 )
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-
 db.init_app(app)
 
 
+# ---------------------------------------------------------
+# FRONTEND
+# ---------------------------------------------------------
+
 @app.route("/")
 def home():
-    return send_from_directory(FRONTEND_FOLDER, "index.html")
+    return send_from_directory(
+        FRONTEND_FOLDER,
+        "index.html"
+    )
 
+
+@app.route("/js/<path:filename>")
+def serve_js(filename):
+    return send_from_directory(
+        FRONTEND_JS_FOLDER,
+        filename
+    )
+
+
+@app.route("/css/<path:filename>")
+def serve_css(filename):
+    return send_from_directory(
+        FRONTEND_CSS_FOLDER,
+        filename
+    )
+
+
+# ---------------------------------------------------------
+# ROVER STATUS
+# ---------------------------------------------------------
 
 @app.route("/api/status", methods=["GET"])
 def status():
@@ -61,15 +128,23 @@ def status():
     })
 
 
+# ---------------------------------------------------------
+# TELEMETRY
+# ---------------------------------------------------------
+
 @app.route("/api/telemetry", methods=["POST"])
 def receive_telemetry():
     data = request.get_json()
 
     if not data:
-        return jsonify({"error": "No data received"}), 400
+        return jsonify({
+            "error": "No data received"
+        }), 400
 
     if data.get("rover_id") is None:
-        return jsonify({"error": "rover_id is required"}), 400
+        return jsonify({
+            "error": "rover_id is required"
+        }), 400
 
     telemetry = Telemetry(
         rover_id=data.get("rover_id"),
@@ -123,15 +198,23 @@ def get_telemetry():
     ])
 
 
+# ---------------------------------------------------------
+# GPS LOCATION
+# ---------------------------------------------------------
+
 @app.route("/api/location", methods=["POST"])
 def receive_location():
     data = request.get_json()
 
     if not data:
-        return jsonify({"error": "No data received"}), 400
+        return jsonify({
+            "error": "No data received"
+        }), 400
 
     if data.get("rover_id") is None:
-        return jsonify({"error": "rover_id is required"}), 400
+        return jsonify({
+            "error": "rover_id is required"
+        }), 400
 
     if (
         data.get("latitude") is None
@@ -190,15 +273,23 @@ def get_location():
     ])
 
 
+# ---------------------------------------------------------
+# DETECTIONS
+# ---------------------------------------------------------
+
 @app.route("/api/detections", methods=["POST"])
 def receive_detection():
     data = request.get_json()
 
     if not data:
-        return jsonify({"error": "No data received"}), 400
+        return jsonify({
+            "error": "No data received"
+        }), 400
 
     if data.get("rover_id") is None:
-        return jsonify({"error": "rover_id is required"}), 400
+        return jsonify({
+            "error": "rover_id is required"
+        }), 400
 
     if not data.get("detection_type"):
         return jsonify({
@@ -265,15 +356,23 @@ def get_detections():
     ])
 
 
+# ---------------------------------------------------------
+# TREATMENTS
+# ---------------------------------------------------------
+
 @app.route("/api/treatments", methods=["POST"])
 def create_treatment():
     data = request.get_json()
 
     if not data:
-        return jsonify({"error": "No data received"}), 400
+        return jsonify({
+            "error": "No data received"
+        }), 400
 
     if data.get("rover_id") is None:
-        return jsonify({"error": "rover_id is required"}), 400
+        return jsonify({
+            "error": "rover_id is required"
+        }), 400
 
     if not data.get("treatment_type"):
         return jsonify({
@@ -335,18 +434,28 @@ def get_treatments():
     ])
 
 
+# ---------------------------------------------------------
+# MISSIONS
+# ---------------------------------------------------------
+
 @app.route("/api/missions", methods=["POST"])
 def create_mission():
     data = request.get_json()
 
     if not data:
-        return jsonify({"error": "No data received"}), 400
+        return jsonify({
+            "error": "No data received"
+        }), 400
 
     if data.get("rover_id") is None:
-        return jsonify({"error": "rover_id is required"}), 400
+        return jsonify({
+            "error": "rover_id is required"
+        }), 400
 
     if not data.get("name"):
-        return jsonify({"error": "name is required"}), 400
+        return jsonify({
+            "error": "name is required"
+        }), 400
 
     mission = Mission(
         rover_id=data.get("rover_id"),
@@ -406,9 +515,15 @@ def get_missions():
     ])
 
 
-@app.route("/api/missions/<int:mission_id>", methods=["PUT"])
+@app.route(
+    "/api/missions/<int:mission_id>",
+    methods=["PUT"]
+)
 def update_mission(mission_id):
-    mission = db.session.get(Mission, mission_id)
+    mission = db.session.get(
+        Mission,
+        mission_id
+    )
 
     if not mission:
         return jsonify({
@@ -457,6 +572,10 @@ def update_mission(mission_id):
         }
     })
 
+
+# ---------------------------------------------------------
+# LOCAL DEVELOPMENT SERVER
+# ---------------------------------------------------------
 
 if __name__ == "__main__":
     with app.app_context():
