@@ -3,12 +3,7 @@ import os
 
 from datetime import datetime
 
-from flask import (
-    Flask,
-    jsonify,
-    request,
-    send_from_directory
-)
+from flask import Flask, jsonify, request, send_from_directory
 
 from models import (
     db,
@@ -21,17 +16,9 @@ from models import (
 )
 
 
-# ---------------------------------------------------------
-# PATHS
-# ---------------------------------------------------------
+BACKEND_FOLDER = os.path.dirname(os.path.abspath(__file__))
 
-BACKEND_FOLDER = os.path.dirname(
-    os.path.abspath(__file__)
-)
-
-PROJECT_ROOT = os.path.dirname(
-    BACKEND_FOLDER
-)
+PROJECT_ROOT = os.path.dirname(BACKEND_FOLDER)
 
 FRONTEND_FOLDER = os.path.join(
     PROJECT_ROOT,
@@ -54,10 +41,6 @@ DATABASE_PATH = os.path.join(
 )
 
 
-# ---------------------------------------------------------
-# FLASK APP
-# ---------------------------------------------------------
-
 app = Flask(
     __name__,
     static_folder=FRONTEND_FOLDER,
@@ -65,22 +48,15 @@ app = Flask(
 )
 
 
-# ---------------------------------------------------------
-# DATABASE CONFIGURATION
-# ---------------------------------------------------------
-
 app.config["SQLALCHEMY_DATABASE_URI"] = (
     f"sqlite:///{DATABASE_PATH.replace(os.sep, '/')}"
 )
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+
 db.init_app(app)
 
-
-# ---------------------------------------------------------
-# FRONTEND
-# ---------------------------------------------------------
 
 @app.route("/")
 def home():
@@ -106,10 +82,6 @@ def serve_css(filename):
     )
 
 
-# ---------------------------------------------------------
-# ROVER STATUS
-# ---------------------------------------------------------
-
 @app.route("/api/status", methods=["GET"])
 def status():
     rover = Rover.query.first()
@@ -127,10 +99,6 @@ def status():
         "battery": 0
     })
 
-
-# ---------------------------------------------------------
-# TELEMETRY
-# ---------------------------------------------------------
 
 @app.route("/api/telemetry", methods=["POST"])
 def receive_telemetry():
@@ -197,10 +165,6 @@ def get_telemetry():
         for record in records
     ])
 
-
-# ---------------------------------------------------------
-# GPS LOCATION
-# ---------------------------------------------------------
 
 @app.route("/api/location", methods=["POST"])
 def receive_location():
@@ -272,10 +236,6 @@ def get_location():
         for record in records
     ])
 
-
-# ---------------------------------------------------------
-# DETECTIONS
-# ---------------------------------------------------------
 
 @app.route("/api/detections", methods=["POST"])
 def receive_detection():
@@ -356,10 +316,6 @@ def get_detections():
     ])
 
 
-# ---------------------------------------------------------
-# TREATMENTS
-# ---------------------------------------------------------
-
 @app.route("/api/treatments", methods=["POST"])
 def create_treatment():
     data = request.get_json()
@@ -433,10 +389,6 @@ def get_treatments():
         for record in records
     ])
 
-
-# ---------------------------------------------------------
-# MISSIONS
-# ---------------------------------------------------------
 
 @app.route("/api/missions", methods=["POST"])
 def create_mission():
@@ -572,10 +524,6 @@ def update_mission(mission_id):
         }
     })
 
-
-# ---------------------------------------------------------
-# LOCAL DEVELOPMENT SERVER
-# ---------------------------------------------------------
 
 if __name__ == "__main__":
     with app.app_context():
