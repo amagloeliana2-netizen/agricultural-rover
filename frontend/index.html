@@ -1,0 +1,2102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Agricultural Autonomous Field System — research, instrumentation, autonomy and field observations."
+    >
+
+    <title>AgriRover Field Systems Laboratory</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <a
+        class="skip-link"
+        href="#main-content"
+    >
+        Skip to main content
+    </a>
+
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a
+                href="#overview"
+                class="wordmark"
+                aria-label="AgriRover Field Systems Laboratory home"
+            >
+
+                <span class="wordmark-mark">
+                    AR
+                </span>
+
+                <span class="wordmark-text">
+                    <strong>AGRIROVER</strong>
+                    <span>FIELD SYSTEMS LABORATORY</span>
+                </span>
+
+            </a>
+
+            <nav
+                class="main-nav"
+                aria-label="Primary navigation"
+            >
+
+                <a href="#overview">
+                    Overview
+                </a>
+
+                <a href="#architecture">
+                    Architecture
+                </a>
+
+                <a href="#instrumentation">
+                    Instrumentation
+                </a>
+
+                <a href="#autonomy">
+                    Autonomy
+                </a>
+
+                <a href="#methodology">
+                    Methodology
+                </a>
+
+                <a href="#results">
+                    Results
+                </a>
+
+                <a href="#team">
+                    Team
+                </a>
+
+                <a href="#documentation">
+                    Documentation
+                </a>
+
+            </nav>
+
+            <div class="header-status">
+
+                <span
+                    class="status-indicator"
+                    aria-label="System online"
+                ></span>
+
+                SYSTEM STATUS: NOMINAL
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main id="main-content">
+
+
+        <!-- =========================================================
+             01 — MISSION OVERVIEW
+        ========================================================== -->
+
+        <section
+            class="hero-section section"
+            id="overview"
+        >
+
+            <div class="container">
+
+                <div class="section-label">
+
+                    <span>
+                        01
+                    </span>
+
+                    MISSION OVERVIEW
+
+                </div>
+
+
+                <div class="hero-grid">
+
+
+                    <div class="hero-copy">
+
+                        <p class="eyebrow">
+                            AUTONOMOUS AGRICULTURAL FIELD SYSTEM
+                        </p>
+
+
+                        <h1>
+                            Field-scale sensing,
+                            <br>
+                            localization and
+                            <br>
+                            targeted treatment.
+                        </h1>
+
+
+                        <p class="hero-description">
+
+                            AgriRover is a mobile field platform
+                            designed to combine machine vision,
+                            environmental sensing and geospatial
+                            localization for crop monitoring and
+                            targeted intervention.
+
+                        </p>
+
+
+                        <div class="hero-meta">
+
+
+                            <div>
+
+                                <span>
+                                    PLATFORM
+                                </span>
+
+                                <strong>
+                                    AR-01
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    OPERATION MODE
+                                </span>
+
+                                <strong>
+                                    AUTONOMOUS / SUPERVISED
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    FIELD STATUS
+                                </span>
+
+                                <strong class="accent-text">
+                                    NOMINAL
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-figure">
+
+                        <img
+                            class="rover-diagram hero-rover-image"
+                            src="https://images.openai.com/static-rsc-4/YoP7bA49mWh92OB5yE94ufui8HUXXf1UTcKB9NKxvoavVEi26ViWGA1Mzc8VZQcLsiD5x3jEEZIHviCXPub0h0N2NVXBRVLm1sFIP_kwGRFnt5PHNypgmS_yugSydtM-3dxHP6yuQVuRokJz6qgtAIVNU2UnIvHdDs8as2iwrRMwtqLcX8Kw58Dn0jHVnTFO?purpose=fullsize"
+                            alt="Agricultural field rover operating between crop rows."
+                            loading="eager"
+                            decoding="async"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             SYSTEM SNAPSHOT
+        ========================================================== -->
+
+        <section class="snapshot-section">
+
+            <div class="container">
+
+                <div class="snapshot-grid">
+
+
+                    <div class="snapshot-item">
+
+                        <span>
+                            POSITION
+                        </span>
+
+                        <strong>
+                            5.6037° N
+                        </strong>
+
+                        <small>
+                            0.1870° W
+                        </small>
+
+                    </div>
+
+
+                    <div class="snapshot-item">
+
+                        <span>
+                            BATTERY
+                        </span>
+
+                        <strong>
+                            78 %
+                        </strong>
+
+                        <small>
+                            12.6 V nominal bus
+                        </small>
+
+                    </div>
+
+
+                    <div class="snapshot-item">
+
+                        <span>
+                            AIR TEMPERATURE
+                        </span>
+
+                        <strong>
+                            29.4 °C
+                        </strong>
+
+                        <small>
+                            Environmental sensor
+                        </small>
+
+                    </div>
+
+
+                    <div class="snapshot-item">
+
+                        <span>
+                            RELATIVE HUMIDITY
+                        </span>
+
+                        <strong>
+                            71 %
+                        </strong>
+
+                        <small>
+                            Environmental sensor
+                        </small>
+
+                    </div>
+
+
+                    <div class="snapshot-item">
+
+                        <span>
+                            DETECTIONS
+                        </span>
+
+                        <strong>
+                            24
+                        </strong>
+
+                        <small>
+                            Current field session
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             02 — SYSTEM ARCHITECTURE
+        ========================================================== -->
+
+        <section
+            class="section light-section"
+            id="architecture"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        02
+                    </span>
+
+                    SYSTEM ARCHITECTURE
+
+                </div>
+
+
+                <div class="section-introduction">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            SYSTEM DESIGN
+                        </p>
+
+                        <h2>
+                            A distributed sensing and
+                            control architecture.
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        The platform separates perception,
+                        localization, control and treatment
+                        functions while maintaining a common
+                        telemetry path to the field operations
+                        interface.
+
+                    </p>
+
+
+                </div>
+
+
+                <div class="architecture-diagram">
+
+
+                    <div class="architecture-node">
+
+                        <span class="node-number">
+                            01
+                        </span>
+
+                        <strong>
+                            FIELD SENSORS
+                        </strong>
+
+                        <small>
+                            Temperature<br>
+                            Humidity<br>
+                            IMU<br>
+                            Distance
+                        </small>
+
+                    </div>
+
+
+                    <div class="architecture-line"></div>
+
+
+                    <div class="architecture-node">
+
+                        <span class="node-number">
+                            02
+                        </span>
+
+                        <strong>
+                            PERCEPTION
+                        </strong>
+
+                        <small>
+                            RGB imaging<br>
+                            Object detection<br>
+                            Confidence scoring
+                        </small>
+
+                    </div>
+
+
+                    <div class="architecture-line"></div>
+
+
+                    <div class="architecture-node">
+
+                        <span class="node-number">
+                            03
+                        </span>
+
+                        <strong>
+                            LOCALIZATION
+                        </strong>
+
+                        <small>
+                            GNSS<br>
+                            Odometry<br>
+                            Coordinate logging
+                        </small>
+
+                    </div>
+
+
+                    <div class="architecture-line"></div>
+
+
+                    <div class="architecture-node">
+
+                        <span class="node-number">
+                            04
+                        </span>
+
+                        <strong>
+                            CONTROL
+                        </strong>
+
+                        <small>
+                            Navigation<br>
+                            Motor control<br>
+                            Treatment actuation
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="specification-block">
+
+
+                    <div class="subsection-heading">
+
+                        <span>
+                            TABLE 01
+                        </span>
+
+                        PLATFORM SPECIFICATION
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Subsystem
+                                    </th>
+
+                                    <th>
+                                        Parameter
+                                    </th>
+
+                                    <th>
+                                        Nominal specification
+                                    </th>
+
+                                    <th>
+                                        Measurement unit
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <tr>
+
+                                    <td>
+                                        Mobility
+                                    </td>
+
+                                    <td>
+                                        Drive configuration
+                                    </td>
+
+                                    <td>
+                                        4-wheel drive
+                                    </td>
+
+                                    <td>
+                                        —
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Power
+                                    </td>
+
+                                    <td>
+                                        Battery chemistry
+                                    </td>
+
+                                    <td>
+                                        LiFePO4
+                                    </td>
+
+                                    <td>
+                                        12 V class
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Environment
+                                    </td>
+
+                                    <td>
+                                        Temperature range
+                                    </td>
+
+                                    <td>
+                                        -20 to +80
+                                    </td>
+
+                                    <td>
+                                        °C
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Environment
+                                    </td>
+
+                                    <td>
+                                        Relative humidity
+                                    </td>
+
+                                    <td>
+                                        0–100
+                                    </td>
+
+                                    <td>
+                                        % RH
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Navigation
+                                    </td>
+
+                                    <td>
+                                        Position source
+                                    </td>
+
+                                    <td>
+                                        GNSS
+                                    </td>
+
+                                    <td>
+                                        latitude / longitude
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Perception
+                                    </td>
+
+                                    <td>
+                                        Primary modality
+                                    </td>
+
+                                    <td>
+                                        RGB image analysis
+                                    </td>
+
+                                    <td>
+                                        frame
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Treatment
+                                    </td>
+
+                                    <td>
+                                        Actuation
+                                    </td>
+
+                                    <td>
+                                        Pump + solenoid valve
+                                    </td>
+
+                                    <td>
+                                        12 V DC
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        Communication
+                                    </td>
+
+                                    <td>
+                                        Telemetry interface
+                                    </td>
+
+                                    <td>
+                                        REST / wireless link
+                                    </td>
+
+                                    <td>
+                                        JSON
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             03 — SENSORS & INSTRUMENTATION
+        ========================================================== -->
+
+        <section
+            class="section"
+            id="instrumentation"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        03
+                    </span>
+
+                    SENSORS &amp; INSTRUMENTATION
+
+                </div>
+
+
+                <div class="instrumentation-grid">
+
+
+                    <article class="instrument">
+
+                        <div class="instrument-index">
+                            03.01
+                        </div>
+
+                        <h3>
+                            Environmental sensing
+                        </h3>
+
+                        <p>
+
+                            Ambient temperature and relative
+                            humidity measurements provide
+                            environmental context for image
+                            observations and field-state
+                            interpretation.
+
+                        </p>
+
+
+                        <dl>
+
+
+                            <div>
+
+                                <dt>
+                                    Temperature
+                                </dt>
+
+                                <dd>
+                                    29.4 °C
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Humidity
+                                </dt>
+
+                                <dd>
+                                    71 % RH
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Sampling
+                                </dt>
+
+                                <dd>
+                                    1 Hz
+                                </dd>
+
+                            </div>
+
+
+                        </dl>
+
+                    </article>
+
+
+                    <article class="instrument">
+
+                        <div class="instrument-index">
+                            03.02
+                        </div>
+
+                        <h3>
+                            Position and orientation
+                        </h3>
+
+                        <p>
+
+                            GNSS and inertial measurements
+                            are combined to associate field
+                            observations with spatial
+                            coordinates and rover motion.
+
+                        </p>
+
+
+                        <dl>
+
+
+                            <div>
+
+                                <dt>
+                                    Latitude
+                                </dt>
+
+                                <dd>
+                                    5.6037° N
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Longitude
+                                </dt>
+
+                                <dd>
+                                    0.1870° W
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Fix state
+                                </dt>
+
+                                <dd>
+                                    VALID
+                                </dd>
+
+                            </div>
+
+
+                        </dl>
+
+                    </article>
+
+
+                    <article class="instrument">
+
+                        <div class="instrument-index">
+                            03.03
+                        </div>
+
+                        <h3>
+                            Vision subsystem
+                        </h3>
+
+                        <p>
+
+                            A forward-facing camera provides
+                            image frames for machine-vision
+                            inference and spatial annotation
+                            of detected targets.
+
+                        </p>
+
+
+                        <dl>
+
+
+                            <div>
+
+                                <dt>
+                                    Input
+                                </dt>
+
+                                <dd>
+                                    RGB
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Output
+                                </dt>
+
+                                <dd>
+                                    Detection + confidence
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Storage
+                                </dt>
+
+                                <dd>
+                                    Local / network
+                                </dd>
+
+                            </div>
+
+
+                        </dl>
+
+                    </article>
+
+
+                    <article class="instrument">
+
+                        <div class="instrument-index">
+                            03.04
+                        </div>
+
+                        <h3>
+                            Mobility instrumentation
+                        </h3>
+
+                        <p>
+
+                            Wheel encoders, inertial sensing
+                            and proximity measurements provide
+                            feedback for motion control and
+                            navigation.
+
+                        </p>
+
+
+                        <dl>
+
+
+                            <div>
+
+                                <dt>
+                                    Drive
+                                </dt>
+
+                                <dd>
+                                    4 × geared motor
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Feedback
+                                </dt>
+
+                                <dd>
+                                    Encoder
+                                </dd>
+
+                            </div>
+
+
+                            <div>
+
+                                <dt>
+                                    Proximity
+                                </dt>
+
+                                <dd>
+                                    Ultrasonic
+                                </dd>
+
+                            </div>
+
+
+                        </dl>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             04 — AUTONOMY & NAVIGATION
+        ========================================================== -->
+
+        <section
+            class="section dark-section"
+            id="autonomy"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label inverse">
+
+                    <span>
+                        04
+                    </span>
+
+                    AUTONOMY &amp; NAVIGATION
+
+                </div>
+
+
+                <div class="dark-grid">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            NAVIGATION PIPELINE
+                        </p>
+
+                        <h2>
+                            From observation to
+                            georeferenced action.
+                        </h2>
+
+                        <p class="dark-copy">
+
+                            Each observation is associated
+                            with rover state and position
+                            before being made available to
+                            the treatment and mission
+                            control layers.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="pipeline">
+
+
+                        <div class="pipeline-row">
+
+                            <span>
+                                01
+                            </span>
+
+                            <strong>
+                                OBSERVE
+                            </strong>
+
+                            <small>
+                                Acquire field image
+                            </small>
+
+                        </div>
+
+
+                        <div class="pipeline-row">
+
+                            <span>
+                                02
+                            </span>
+
+                            <strong>
+                                CLASSIFY
+                            </strong>
+
+                            <small>
+                                Run visual inference
+                            </small>
+
+                        </div>
+
+
+                        <div class="pipeline-row">
+
+                            <span>
+                                03
+                            </span>
+
+                            <strong>
+                                LOCALIZE
+                            </strong>
+
+                            <small>
+                                Associate GNSS position
+                            </small>
+
+                        </div>
+
+
+                        <div class="pipeline-row">
+
+                            <span>
+                                04
+                            </span>
+
+                            <strong>
+                                DECIDE
+                            </strong>
+
+                            <small>
+                                Evaluate treatment rule
+                            </small>
+
+                        </div>
+
+
+                        <div class="pipeline-row">
+
+                            <span>
+                                05
+                            </span>
+
+                            <strong>
+                                ACTUATE
+                            </strong>
+
+                            <small>
+                                Command treatment system
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             05 — DATA & METHODOLOGY
+        ========================================================== -->
+
+        <section
+            class="section light-section"
+            id="methodology"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        05
+                    </span>
+
+                    DATA &amp; METHODOLOGY
+
+                </div>
+
+
+                <div class="methodology-grid">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DATA PIPELINE
+                        </p>
+
+                        <h2>
+                            Measurements remain
+                            traceable to their field context.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="methodology-copy">
+
+                        <p>
+
+                            The backend records telemetry,
+                            location, detections and treatment
+                            events as timestamped observations.
+                            This allows individual events to be
+                            reviewed against rover position and
+                            environmental state.
+
+                        </p>
+
+
+                        <p>
+
+                            Detection confidence is retained
+                            with the original observation.
+                            Treatment records are maintained
+                            separately so that an inferred
+                            target and the resulting intervention
+                            can be evaluated independently.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="data-flow">
+
+
+                    <div class="data-flow-item">
+
+                        <span>
+                            INPUT
+                        </span>
+
+                        <strong>
+                            Sensor stream
+                        </strong>
+
+                        <small>
+                            Telemetry / GNSS / imagery
+                        </small>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="data-flow-item">
+
+                        <span>
+                            PROCESS
+                        </span>
+
+                        <strong>
+                            Inference
+                        </strong>
+
+                        <small>
+                            Detection / localization
+                        </small>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="data-flow-item">
+
+                        <span>
+                            RECORD
+                        </span>
+
+                        <strong>
+                            Event database
+                        </strong>
+
+                        <small>
+                            Timestamped observations
+                        </small>
+
+                    </div>
+
+
+                    <div class="flow-arrow">
+                        →
+                    </div>
+
+
+                    <div class="data-flow-item">
+
+                        <span>
+                            OUTPUT
+                        </span>
+
+                        <strong>
+                            Field action
+                        </strong>
+
+                        <small>
+                            Treatment / mission state
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="limitations">
+
+
+                    <div class="subsection-heading">
+
+                        <span>
+                            NOTE 01
+                        </span>
+
+                        CURRENT LIMITATIONS
+
+                    </div>
+
+
+                    <ul>
+
+                        <li>
+
+                            GNSS accuracy is dependent on
+                            satellite visibility and local
+                            environmental conditions.
+
+                        </li>
+
+
+                        <li>
+
+                            Visual detection performance
+                            depends on image quality,
+                            illumination and training
+                            data coverage.
+
+                        </li>
+
+
+                        <li>
+
+                            Treatment decisions require
+                            validation before deployment
+                            in operational field conditions.
+
+                        </li>
+
+
+                        <li>
+
+                            Current platform communication
+                            is being developed independently
+                            of the final embedded hardware
+                            interface.
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             06 — FIELD RESULTS
+        ========================================================== -->
+
+        <section
+            class="section"
+            id="results"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        06
+                    </span>
+
+                    FIELD RESULTS
+
+                </div>
+
+
+                <div class="results-header">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            CURRENT FIELD SESSION
+                        </p>
+
+                        <h2>
+                            Morning Field Survey
+                        </h2>
+
+                    </div>
+
+
+                    <div class="session-meta">
+                        SESSION AR-01 / 2026-09-20
+                    </div>
+
+
+                </div>
+
+
+                <div class="results-grid">
+
+
+                    <div class="result-chart">
+
+
+                        <div class="chart-header">
+
+                            <span>
+                                FIG. 2
+                            </span>
+
+                            <strong>
+                                DETECTIONS BY FIELD POSITION
+                            </strong>
+
+                        </div>
+
+
+                        <svg
+                            viewBox="0 0 720 330"
+                            class="chart-svg"
+                            role="img"
+                            aria-label="Field detection distribution chart"
+                        >
+
+                            <line
+                                x1="70"
+                                y1="270"
+                                x2="680"
+                                y2="270"
+                                stroke="#69756f"
+                            />
+
+                            <line
+                                x1="70"
+                                y1="50"
+                                x2="70"
+                                y2="270"
+                                stroke="#69756f"
+                            />
+
+                            <line
+                                x1="70"
+                                y1="215"
+                                x2="680"
+                                y2="215"
+                                stroke="#d8ded9"
+                            />
+
+                            <line
+                                x1="70"
+                                y1="160"
+                                x2="680"
+                                y2="160"
+                                stroke="#d8ded9"
+                            />
+
+                            <line
+                                x1="70"
+                                y1="105"
+                                x2="680"
+                                y2="105"
+                                stroke="#d8ded9"
+                            />
+
+                            <text
+                                x="55"
+                                y="275"
+                                text-anchor="end"
+                            >
+                                0
+                            </text>
+
+                            <text
+                                x="55"
+                                y="220"
+                                text-anchor="end"
+                            >
+                                5
+                            </text>
+
+                            <text
+                                x="55"
+                                y="165"
+                                text-anchor="end"
+                            >
+                                10
+                            </text>
+
+                            <text
+                                x="55"
+                                y="110"
+                                text-anchor="end"
+                            >
+                                15
+                            </text>
+
+                            <rect
+                                x="120"
+                                y="171"
+                                width="80"
+                                height="99"
+                                fill="#3e8e5a"
+                            />
+
+                            <rect
+                                x="250"
+                                y="127"
+                                width="80"
+                                height="143"
+                                fill="#3e8e5a"
+                            />
+
+                            <rect
+                                x="380"
+                                y="204"
+                                width="80"
+                                height="66"
+                                fill="#3e8e5a"
+                            />
+
+                            <rect
+                                x="510"
+                                y="226"
+                                width="80"
+                                height="44"
+                                fill="#3e8e5a"
+                            />
+
+                            <text
+                                x="160"
+                                y="292"
+                                text-anchor="middle"
+                            >
+                                A1
+                            </text>
+
+                            <text
+                                x="290"
+                                y="292"
+                                text-anchor="middle"
+                            >
+                                A2
+                            </text>
+
+                            <text
+                                x="420"
+                                y="292"
+                                text-anchor="middle"
+                            >
+                                A3
+                            </text>
+
+                            <text
+                                x="550"
+                                y="292"
+                                text-anchor="middle"
+                            >
+                                A4
+                            </text>
+
+                            <text
+                                x="375"
+                                y="322"
+                                text-anchor="middle"
+                            >
+                                FIELD ZONE
+                            </text>
+
+                        </svg>
+
+
+                        <div class="figure-caption">
+
+                            <span>
+                                Fig. 2 — Recorded detections by field zone.
+                            </span>
+
+                            <span>
+                                n = 24
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="results-table">
+
+
+                        <div class="chart-header">
+
+                            <span>
+                                TABLE 02
+                            </span>
+
+                            <strong>
+                                RECENT OBSERVATIONS
+                            </strong>
+
+                        </div>
+
+
+                        <div class="observation">
+
+
+                            <div class="observation-time">
+                                10:42:18
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Target Pest
+                                </strong>
+
+                                <span>
+                                    Zone A4
+                                </span>
+
+                            </div>
+
+
+                            <div class="observation-value">
+                                94 %
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="observation">
+
+
+                            <div class="observation-time">
+                                10:36:04
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Leaf Disease
+                                </strong>
+
+                                <span>
+                                    Zone A2
+                                </span>
+
+                            </div>
+
+
+                            <div class="observation-value">
+                                87 %
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="observation">
+
+
+                            <div class="observation-time">
+                                10:29:51
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Target Pest
+                                </strong>
+
+                                <span>
+                                    Zone B1
+                                </span>
+
+                            </div>
+
+
+                            <div class="observation-value">
+                                91 %
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="observation">
+
+
+                            <div class="observation-time">
+                                10:21:37
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Target Pest
+                                </strong>
+
+                                <span>
+                                    Zone A2
+                                </span>
+
+                            </div>
+
+
+                            <div class="observation-value">
+                                89 %
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             07 — TEAM
+        ========================================================== -->
+
+        <section
+            class="section light-section"
+            id="team"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        07
+                    </span>
+
+                    TEAM
+
+                </div>
+
+
+                <div class="team-grid">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            FIELD SYSTEMS GROUP
+                        </p>
+
+                        <h2>
+                            Engineering the complete
+                            sensing-to-action loop.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="team-description">
+
+                        <p>
+
+                            The project integrates embedded
+                            systems, robotics, machine vision,
+                            geospatial sensing and web-based
+                            field operations infrastructure.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             08 — PUBLICATIONS & DOCUMENTATION
+        ========================================================== -->
+
+        <section
+            class="section"
+            id="documentation"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        08
+                    </span>
+
+                    PUBLICATIONS &amp; DOCUMENTATION
+
+                </div>
+
+
+                <div class="documentation-grid">
+
+
+                    <a
+                        href="#"
+                        class="document-row"
+                    >
+
+                        <span>
+                            TECHNICAL REPORT
+                        </span>
+
+                        <strong>
+                            Autonomous Agricultural Rover —
+                            System Architecture
+                        </strong>
+
+                        <span>
+                            PDF / 2026
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="document-row"
+                    >
+
+                        <span>
+                            METHOD NOTE
+                        </span>
+
+                        <strong>
+                            Field Detection and Geospatial
+                            Observation Pipeline
+                        </strong>
+
+                        <span>
+                            PDF / 2026
+                        </span>
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="document-row"
+                    >
+
+                        <span>
+                            DATA NOTE
+                        </span>
+
+                        <strong>
+                            Telemetry, Location and Treatment
+                            Data Schema
+                        </strong>
+
+                        <span>
+                            JSON / API
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             CONTACT
+        ========================================================== -->
+
+        <section
+            class="section light-section"
+            id="contact"
+        >
+
+            <div class="container">
+
+
+                <div class="section-label">
+
+                    <span>
+                        09
+                    </span>
+
+                    CONTACT
+
+                </div>
+
+
+                <div class="contact-grid">
+
+
+                    <div>
+
+                        <p class="eyebrow">
+                            FIELD SYSTEMS LABORATORY
+                        </p>
+
+                        <h2>
+                            Building practical tools
+                            for precision agriculture.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="contact-details">
+
+
+                        <div>
+
+                            <span>
+                                EMAIL
+                            </span>
+
+                            <a href="mailto:fieldsystems@example.org">
+                                fieldsystems@example.org
+                            </a>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                PLATFORM
+                            </span>
+
+                            <strong>
+                                AGRIROVER AR-01
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                SYSTEM
+                            </span>
+
+                            <strong>
+                                FIELD OPERATIONS PLATFORM
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="site-footer">
+
+
+        <div class="container footer-grid">
+
+
+            <div>
+
+                <strong>
+                    AGRIROVER FIELD SYSTEMS LABORATORY
+                </strong>
+
+                <p>
+                    Autonomous sensing and targeted field robotics.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    PLATFORM
+                </span>
+
+                <strong>
+                    AR-01
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong class="accent-text">
+                    OPERATIONAL
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    CONTACT
+                </span>
+
+                <a href="mailto:fieldsystems@example.org">
+                    fieldsystems@example.org
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+
+            <span>
+                © 2026 AgriRover Field Systems Laboratory
+            </span>
+
+
+            <span>
+                SYSTEM VERSION 1.0
+            </span>
+
+
+        </div>
+
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
